@@ -14,4 +14,7 @@ def python ( py ):
   return;
 
 ####################################################
-python("/root/minicloud-auto/to_execute.py")
+#python("/root/minicloud-auto/to_execute.py")
+python("/root/minicloud-auto/update_inventory.py")
+python("/root/minicloud-auto/install.py")
+cmd("/usr/bin/systemctl disable post_boot.service")
