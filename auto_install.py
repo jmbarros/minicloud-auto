@@ -19,11 +19,6 @@ def copy ( ori, dest ):
    os.system(cpw)
    return;
 
-def python ( py ):
-  "run py script"
-  ps = "/usr/bin/python ./" + py
-  os.system(ps)
-  return;
 ####################################################
 copy("/root/minicloud-auto/post_boot.service", "/etc/systemd/system/post_boot.service")
 cmd("/usr/bin/systemctl enable post_boot.service")
