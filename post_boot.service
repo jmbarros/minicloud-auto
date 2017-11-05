@@ -5,9 +5,6 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python /root/minicloud-auto/post_boot.py
-Restart=always
-KillMode=process
-KillSignal=SIGHUP
 
 [Install]
 WantedBy=multi-user.target
