@@ -28,6 +28,11 @@ def copy ( ori, dest ):
    os.system(pw)
    return;
 
+def cmd ( cmdx ):
+   " run"
+   os.system(cmdx)
+   return;
+
 ##########################################################################
 # todo = transform DEF
 filein="/etc/ansible/ansible.cfg"
@@ -52,3 +57,4 @@ play_book("/root/minicloud-servers/config_prereq.yml", "/root/inventory")
 
 docker_run("-e LICENSE=accept --net=host  -t -v /root/cluster:/installer/cluster ibmcom/icp-inception:2.1.0-ee install")
 
+cmd("/usr/bin/systemctl disable post_boot.service")
