@@ -16,7 +16,7 @@ def get_ip_address(ifname):
 ip=get_ip_address('ens192')
 hostname=socket.gethostname()
 
-file = open("~/inventory", "w")
+file = open("/root/inventory", "w")
 file.write("[minicloud]\n")
 file.write( hostname + " ansible_ssh_host=" + ip + " ansible_ssh_user=root ansible_ssh_port=22 ansible_ssh_pass=\"Coc@ibm17\"\n")
 file.close()
