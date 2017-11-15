@@ -1,4 +1,4 @@
-# Creating IBM Cloud CE Automaticaly 
+# Creating IBM Cloud CE Automatically 
 
 - create 1 virtual server, running Centos 7 
 	- download here: http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso)
