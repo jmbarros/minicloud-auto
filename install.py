@@ -48,13 +48,13 @@ f = open(fileout,'w')
 f.write(newdata)
 f.close()
 ##########################################################################
-docker_run("-e LICENSE=accept  -v /root:/data ibmcom/icp-inception:2.1.0-ee cp -r cluster /data")
+docker_run("-e LICENSE=accept  -v /root:/data ibmcom/icp-inception:2.1.0 cp -r cluster /data")
 
 copy("/root/.ssh/id_rsa", "/root/cluster/ssh_key")
 copy("/root/minicloud-servers/hosts", "/root/cluster/hosts")
 play_book("/root/minicloud-servers/hosts.yml", "/root/inventory")
 play_book("/root/minicloud-servers/config_prereq.yml", "/root/inventory")
 
-docker_run("-e LICENSE=accept --net=host  -t -v /root/cluster:/installer/cluster ibmcom/icp-inception:2.1.0-ee install")
+docker_run("-e LICENSE=accept --net=host  -t -v /root/cluster:/installer/cluster ibmcom/icp-inception:2.1.0 install")
 
 cmd("/usr/bin/systemctl disable post_boot.service")
