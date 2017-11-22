@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+
+  vars_prompt:
+    - name: "host"
+      prompt: "Set the hostname"
+      private: no
+
+  tasks:
+    - hostname:
+        name: "{{ host }}"
